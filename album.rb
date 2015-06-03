@@ -11,7 +11,7 @@ class Album
   def track_names
     all_tracks = ""
     tracks.each do |track|
-      all_tracks << "\n- " << track[:title]
+      all_tracks << "\n- " << track.title
     end
     all_tracks
   end
@@ -23,7 +23,7 @@ class Album
   def track_duration
     track_min = 0.00
     @tracks.each do |hash|
-      track_min = milli_to_sec_conversion(hash[:duration_ms].to_f)
+      track_min = milli_to_sec_conversion(hash.duration_ms.to_f)
     end
     track_min.round(2)
   end
